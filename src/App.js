@@ -3,6 +3,7 @@ import Banner from "./Components/Banner";
 import Form from "./Components/Form";
 import Title from "./Components/Title";
 import Movies from "./Components/Movies";
+import Footer from "./Components/Footer";
 
 function App() {
 
@@ -75,6 +76,8 @@ function App() {
         movies={movies.filter(movie => movie.gener === gener.name)}
         
         />)}
+
+        <Footer />
 
     </div>
   )

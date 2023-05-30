@@ -34,7 +34,7 @@ const Form = (props) => {
     return (
         <section className="form">
             <form onSubmit={whenSave}>
-                <h2>Fill in the data to create the employee card</h2>
+                <h2>Fill in the data to create the movie card</h2>
 
                 <TextFild
                     placeholder="Type the movie name"

@@ -1,12 +1,13 @@
-.banner {
+.footer {
     text-align: center;
     background: 
     url(../../../public/images/ruido.png),
     linear-gradient(50deg,#62d9ff,#6278F7);
     box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.2);
-    
 }
 
-.banner img {
+.footer footer {
     max-width: 100%;
+    font-size: 24px;
+    padding: 5px;
 }
