@@ -6,12 +6,9 @@ import "./Form.css"
 
 const Form = (props) => {
 
-    const notes = ['', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
     const [name, setName] = useState('')
     const [opinion, setOpnion] = useState('')
     const [image, setImage] = useState('')
-    const [note, setNote] = useState('')
     const [gener, setGener] = useState('')
 
     const whenSave = (e) => {
@@ -20,15 +17,13 @@ const Form = (props) => {
             name,
             opinion,
             image,
-            note,
             gener
-        });
+        })
 
-        setName('');
-        setOpnion('');
-        setImage('');
-        setNote('');
-        setGener('');
+        setName('')
+        setOpnion('')
+        setImage('')
+        setGener('')
     }
 
     return (
@@ -57,14 +52,6 @@ const Form = (props) => {
                     label="Image"
                     whenChanged={parameter => setImage(parameter)}
                     value={image}
-                    required={true}
-                />
-
-                <Dropdown
-                    label="Note"
-                    parameter={notes}
-                    whenChanged={parameter => setNote(parameter)}
-                    value={note}
                     required={true}
                 />
 

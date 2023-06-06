@@ -7,59 +7,68 @@ import Footer from "./Components/Footer";
 
 function App() {
 
-  const geners = [
+  const [geners, setGener] = useState([
     {
       name: 'comedy',
-      primaryColor: '#57C278',
-      secondaryColor: '#D9F7E9'
+      color: '#57C278',
     },
     {
       name: 'drama',
-      primaryColor: '#82CFFA',
-      secondaryColor: '#E8F8FF'
+      color: '#82CFFA',
     },
     {
       name: 'romance',
-      primaryColor: '#A6D157',
-      secondaryColor: '#F0F8E2'
+      color: '#A6D157',
     },
     {
       name: 'horror',
-      primaryColor: '#E06B69',
-      secondaryColor: '#FDE7E8'
+      color: '#E06B69',
     },
     {
       name: 'action',
-      primaryColor: '#DB6EBF',
-      secondaryColor: '#FAE9F5'
+      color: '#DB6EBF',
     },
     {
       name: 'adventure',
-      primaryColor: '#FFBA05',
-      secondaryColor: '#FFF5D9'
+      color: '#FFBA05',
     },
     {
       name: 'animation',
-      primaryColor: '#FF8A29',
-      secondaryColor: '#FFEEDF'
+      color: '#FF8A29',
     },
     {
       name: 'sci-fi',
-      primaryColor: '#120A8F',
-      secondaryColor: '#b5ffff'
+      color: '#120A8F',
     },
     {
       name: 'thriller',
-      primaryColor: '#9B111E',
-      secondaryColor: '#ffcac1'
+      color: '#9B111E',
     }
 
-  ]
+  ])
 
-  const [movies, setMovies] = useState([])
+  const initial = [{
+    name: 'Lucas',
+    opinion: 'Nice movie!',
+    image: 'https://github.com/lucasF286.png',
+    gener: geners[1].name
+  }]
+
+  const [movies, setMovies] = useState(initial)
 
   const whenChangeMovie = (movie) => {
     setMovies([...movies, movie])
+  }
+
+  function whenDelete () {
+    console.log('deleting this movie');
+  }
+
+  function changeColor (color, id) {
+    setGener(geners.map(gener => {
+      if(gener.name === id) gener.color = color;
+      return gener;
+    }))
   }
 
   return (
@@ -71,10 +80,10 @@ function App() {
         {geners.map(gener => <Movies 
         key={gener.name} 
         name={gener.name}
-        primaryColor={gener.primaryColor}
-        secondaryColor={gener.secondaryColor}
+        color={gener.color}
         movies={movies.filter(movie => movie.gener === gener.name)}
-        
+        whenDelete={whenDelete}
+        changeColor={changeColor}
         />)}
 
         <Footer />

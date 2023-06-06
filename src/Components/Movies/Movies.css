@@ -1,4 +1,5 @@
 .movies {
+    position: relative;
     text-align: center;
     padding: 32px;
 }
@@ -15,4 +16,9 @@
     justify-content: space-around;
     margin-top: 32px;
     flex-wrap: wrap;
+}
+
+.inputColor {
+    position: absolute;
+    right: 30px;
 }
