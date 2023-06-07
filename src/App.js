@@ -60,17 +60,17 @@ function App() {
   const initial = [
     {
       id: uuidv4(),
-      name: 'Lucas',
+      name: 'Avengers',
       opinion: 'Nice movie!',
-      image: 'https://github.com/lucasF286.png',
-      gener: geners[1].name
+      image: 'https://cinepop.com.br/wp-content/uploads/2022/04/painel-vingadores-2-50-x-1-50m-capitao-america.jpg',
+      gener: geners[4].name
     },
     {
       id: uuidv4(),
-      name: 'Lucas',
+      name: 'It',
       opinion: 'Nice movie!',
-      image: 'https://github.com/lucasF286.png',
-      gener: geners[1].name
+      image: 'https://pipocasclub.com.br/wp-content/uploads/2022/06/It_A_Coisa_2017.jpg',
+      gener: geners[3].name
     },
     
   ]
