@@ -5,7 +5,7 @@ const Card = (props) => {
     return (
         <div className="card">
             <div className="header" style={{ backgroundColor: props.color }}>
-                <AiFillCloseCircle className='deleteButton' onClick={props.whenDelete} size={25}/>
+                <AiFillCloseCircle className='deleteButton' onClick={()=> props.whenDelete(props.movie.id)} size={25}/>
                 <img src={props.image} alt={props.name} />
             </div>
             <div className='footer'>

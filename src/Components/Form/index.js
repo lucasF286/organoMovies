@@ -3,6 +3,7 @@ import Button from "../Button"
 import Dropdown from "../Dropdown"
 import TextFild from "../textFild"
 import "./Form.css"
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = (props) => {
 
@@ -10,16 +11,17 @@ const Form = (props) => {
     const [opinion, setOpnion] = useState('')
     const [image, setImage] = useState('')
     const [gener, setGener] = useState('')
+    const id = uuidv4();
 
     const whenSave = (e) => {
         e.preventDefault();
         props.whenRegisterMovie({
+            id,
             name,
             opinion,
             image,
             gener
         })
-
         setName('')
         setOpnion('')
         setImage('')
