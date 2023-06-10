@@ -70,6 +70,31 @@ const Form = (props) => {
                 </Button>
 
             </form>
+
+            <form onSubmit={''}>
+                <h2>Fill in the data to create a new gener</h2>
+
+                <TextFild
+                    placeholder="Type the gener name"
+                    label="Name"
+                    whenChanged={parameter => setName(parameter)}
+                    value={name}
+                    required={true}
+                />
+
+                <TextFild
+                    placeholder="Type the color of gener"
+                    label="Opinion"
+                    whenChanged={parameter => setOpnion(parameter)}
+                    value={opinion}
+                    required={true}
+                />
+
+                <Button>
+                    Create a gener
+                </Button>
+
+            </form>
         </section>
     )
 }
