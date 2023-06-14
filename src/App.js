@@ -92,10 +92,14 @@ function App() {
     }))
   }
 
+  function registerGener(gener) {
+    setGener([...geners, {...gener, id: uuidv4()}]);
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Form geners={geners.map(gener => gener.name)} whenRegisterMovie={movie => whenChangeMovie(movie)} />
+      <Form registerGener={registerGener} geners={geners.map(gener => gener.name)} whenRegisterMovie={movie => whenChangeMovie(movie)} />
       <Title title="My movies" />
 
       {geners.map(gener => <Movies

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Button from "../Button"
 import Dropdown from "../Dropdown"
-import TextFild from "../textFild"
+import Fild from "../Fild"
 import "./Form.css"
 import { v4 as uuidv4 } from 'uuid';
 
@@ -35,7 +35,7 @@ const Form = (props) => {
             <form onSubmit={whenSave}>
                 <h2>Fill in the data to create the movie card</h2>
 
-                <TextFild
+                <Fild
                     placeholder="Type the movie name"
                     label="Name"
                     whenChanged={parameter => setName(parameter)}
@@ -43,7 +43,7 @@ const Form = (props) => {
                     required={true}
                 />
 
-                <TextFild
+                <Fild
                     placeholder="Type your opinion about the movie"
                     label="Opinion"
                     whenChanged={parameter => setOpnion(parameter)}
@@ -51,7 +51,7 @@ const Form = (props) => {
                     required={true}
                 />
 
-                <TextFild
+                <Fild
                     placeholder="Enter image address"
                     label="Image"
                     whenChanged={parameter => setImage(parameter)}
@@ -73,12 +73,13 @@ const Form = (props) => {
 
             </form>
 
-            <form onSubmit={()=> {
-                console.log('ola');
+            <form onSubmit={(e)=> {
+                e.preventDefault();
+                props.registerGener({name: generName, color: generColor});
             }}>
                 <h2>Fill in the data to create a new gener</h2>
 
-                <TextFild
+                <Fild
                     placeholder="Type the gener name"
                     label="Name"
                     whenChanged={parameter => setGenerName(parameter)}
@@ -86,7 +87,7 @@ const Form = (props) => {
                     required={true}
                 />
 
-                <TextFild
+                <Fild
                     placeholder="Type the color of gener"
                     label="Color"
                     whenChanged={parameter => setGenerColor(parameter)}
