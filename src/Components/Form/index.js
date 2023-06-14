@@ -11,6 +11,8 @@ const Form = (props) => {
     const [opinion, setOpnion] = useState('')
     const [image, setImage] = useState('')
     const [gener, setGener] = useState('')
+    const [generName, setGenerName] = useState('')
+    const [generColor, setGenerColor] = useState('')
     const id = uuidv4();
 
     const whenSave = (e) => {
@@ -71,22 +73,25 @@ const Form = (props) => {
 
             </form>
 
-            <form onSubmit={''}>
+            <form onSubmit={()=> {
+                console.log('ola');
+            }}>
                 <h2>Fill in the data to create a new gener</h2>
 
                 <TextFild
                     placeholder="Type the gener name"
                     label="Name"
-                    whenChanged={parameter => setName(parameter)}
-                    value={name}
+                    whenChanged={parameter => setGenerName(parameter)}
+                    value={generName}
                     required={true}
                 />
 
                 <TextFild
                     placeholder="Type the color of gener"
-                    label="Opinion"
-                    whenChanged={parameter => setOpnion(parameter)}
-                    value={opinion}
+                    label="Color"
+                    whenChanged={parameter => setGenerColor(parameter)}
+                    value={generColor}
+                    type='color'
                     required={true}
                 />
 
