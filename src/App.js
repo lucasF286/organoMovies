@@ -60,6 +60,7 @@ function App() {
   const initial = [
     {
       id: uuidv4(),
+      favorite: false,
       name: 'Avengers',
       opinion: 'Nice movie!',
       image: 'https://cinepop.com.br/wp-content/uploads/2022/04/painel-vingadores-2-50-x-1-50m-capitao-america.jpg',
@@ -67,12 +68,13 @@ function App() {
     },
     {
       id: uuidv4(),
+      favorite: false,
       name: 'It',
       opinion: 'Nice movie!',
       image: 'https://pipocasclub.com.br/wp-content/uploads/2022/06/It_A_Coisa_2017.jpg',
       gener: geners[3].name
     },
-    
+
   ]
 
   const [movies, setMovies] = useState(initial)
@@ -93,9 +95,15 @@ function App() {
   }
 
   function registerGener(gener) {
-    setGener([...geners, {...gener, id: uuidv4()}]);
+    setGener([...geners, { ...gener, id: uuidv4() }]);
   }
 
+  function solveFavorite (id) {
+    setMovies(movies.map(movie => {
+      if (movie.id === id) movie.favorite = !movie.favorite;
+      return movie;
+    }))
+  }
   return (
     <div className="App">
       <Banner />
@@ -110,6 +118,7 @@ function App() {
         whenDelete={whenDelete}
         changeColor={changeColor}
         gener={gener}
+        whenFavorite={solveFavorite}
       />)}
 
       <Footer />

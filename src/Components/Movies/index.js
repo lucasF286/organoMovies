@@ -16,7 +16,8 @@ const Movies = (props) => {
                     opinion={movie.opinion}
                     color={props.color}
                     whenDelete={props.whenDelete}
-                    movie={movie}
+                    movie={movie} 
+                    whenFavorite={props.whenFavorite}
                 />)}
             </div>
 
